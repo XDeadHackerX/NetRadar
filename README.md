@@ -54,11 +54,11 @@
 
 ## 🎲 Tener en Cuenta 🎲
 
-**[1]** En caso de usar la Herramienta para escanear direcciones IPs funcionará perfecto excepto de tener una VPN activada, con el uso de VPN la mayoría de servidores dan respuestas erróneas sobre sus puertos.
+<p align="justify"><strong>[1]</strong> En caso de usar la Herramienta para escanear direcciones IPs funcionará perfecto excepto de tener una VPN activada, con el uso de VPN la mayoría de servidores dan respuestas erróneas sobre sus puertos.</p>
 
-**[2]** En caso de que tengas descargada una versión más antigua, te aconsejo borrarla y volver a instalar la herramienta (+requisitos) para solucionar errores y obtener mejoras, que hacen que la herramienta sea mucho mejor que las versiones anteriores.
+<p align="justify"><strong>[2]</strong> En caso de que tengas descargada una versión más antigua, te aconsejo borrarla y volver a instalar la herramienta (+requisitos) para solucionar errores y obtener mejoras, que hacen que la herramienta sea mucho mejor que las versiones anteriores.</p>
 
-**[3]** Si dentro de la opción ([4] Escaneo de Todos los Dispositivos de la Red Local) en el apartado ([6] Buscar Servicios [HTTP, SMB, FTP, SSH,.]) se queda pillado, solo espere 3 minutos, esto ocurre por un error con una de las herramientas y está volcando la salida incorrecta al segundo plano y la Información correcta la está lanzando por terminal.
+<p align="justify"><strong>[3]</strong> Si dentro de la opción ([4] Escaneo de Todos los Dispositivos de la Red Local) en el apartado ([6] Buscar Servicios [HTTP, SMB, FTP, SSH,.]) se queda pillado, solo espere 3 minutos, esto ocurre por un error con una de las herramientas y está volcando la salida incorrecta al segundo plano y la Información correcta la está lanzando por terminal.</p>
 
 ## 🔎 Versiones 🔎
 

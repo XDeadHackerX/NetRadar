@@ -54,11 +54,11 @@
 
 ## 🎲 Keep in mind 🎲
 
-**[1]** In case you use the Tool to scan IP addresses it will work perfect except you have a VPN enabled, with the use of VPN most servers give wrong answers about their ports.
+<p align="justify"><strong>[1]</strong> In case you use the Tool to scan IP addresses it will work perfect except you have a VPN enabled, with the use of VPN most servers give wrong answers about their ports.</p>
 
-**[2]** In case you have downloaded an older version, I advise you to delete it and reinstall the tool (+requirements) to fix bugs and get improvements, which make the tool much better than previous versions.
+<p align="justify"><strong>[2]</strong> In case you have downloaded an older version, I advise you to delete it and reinstall the tool (+requirements) to fix bugs and get improvements, which make the tool much better than previous versions.</p>
 
-**[3]** If inside the option ([4] Scan All Local Network Devices) in the section ([6] Search Services [HTTP, SMB, FTP, SSH,.]) you get stuck, just wait 3 minutes, this happens because of an error with one of the tools and it is dumping the wrong output to the background and the correct Information is launching it by terminal.
+<p align="justify"><strong>[3]</strong> If inside the option ([4] Scan All Local Network Devices) in the section ([6] Search Services [HTTP, SMB, FTP, SSH,.]) you get stuck, just wait 3 minutes, this happens because of an error with one of the tools and it is dumping the wrong output to the background and the correct Information is launching it by terminal.</p>
 
 ## 🔎 Versions 🔎
 
