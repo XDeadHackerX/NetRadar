@@ -2,7 +2,7 @@
 
 [Español](https://github.com/XDeadHackerX/NetRadar/blob/main/README.md) | [English](https://github.com/XDeadHackerX/NetRadar/blob/main/README-English.md)
 
-> Herramienta creada por XDeadHackerX
+> Tool created by XDeadHacker
 
 <p align="center"><img width="120px" alt="Version" src="https://img.shields.io/badge/version-1.0-white.svg?style=for-the-badge"/></p>
 
