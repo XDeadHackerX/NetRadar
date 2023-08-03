@@ -6,7 +6,7 @@
 
 <p align="center"><img width="120px" alt="Version" src="https://img.shields.io/badge/version-1.0-white.svg?style=for-the-badge"/></p>
 
-[url=https://postimg.cc/zVHYTm4m][img]https://i.postimg.cc/zVHYTm4m/Net-Radar-1-0-es.png[/img][/url]
+[![Net-Radar-1-0-es.png](https://i.postimg.cc/FsDF5NZK/Net-Radar-1-0-es.png)](https://postimg.cc/zVHYTm4m)
 
 ---
 
@@ -69,8 +69,11 @@
 
 ## 📷 Captures 📷
 
-# Información Tarjeta de Red + Equipo <a name="punto1"></a>
-<p align="center"><img src=https://i.postimg.cc/XYGCX8nM/Net-Radar-1-0-es-Ejem-1.png width="350px"/></p>
+### Información Tarjeta de Red + Equipo <a name="punto1"></a>
+<p align="center"><img src=https://i.postimg.cc/XYGCX8nM/Net-Radar-1-0-es-Ejem-1.png width="500px"/></p>
+
+**Información Tarjeta de Red Wifi + Utilidades** <a name="punto2.1"></a>
+<p align="center"><img src=https://i.postimg.cc/5ts7VzWk/Net-Radar-1-0-es-Ejem-2-1.png width="500px"/></p>
 
 ## ⭐☕ Creado por XDeadHackerX ☕⭐
 
