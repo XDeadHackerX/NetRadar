@@ -6,7 +6,7 @@
 
 <p align="center"><img width="120px" alt="Version" src="https://img.shields.io/badge/version-1.0-white.svg?style=for-the-badge"/></p>
 
-[![Net-Radar-1-0-es.png](https://i.postimg.cc/xTBFyHz3/Net-Radar-1-0-es.png)](https://postimg.cc/ZCFcJWjW)
+[url=https://postimg.cc/zVHYTm4m][img]https://i.postimg.cc/zVHYTm4m/Net-Radar-1-0-es.png[/img][/url]
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## 💡 Funciones 💡
 
-:ballot_box_with_check: **Información Tarjeta de Red + Equipo** --> [*IP Pública, IP Local, DNS, MAC, Sistema Operativo, Prueba de Velocidad Internet* ]
+:ballot_box_with_check: **Información Tarjeta de Red + Equipo** --> [*IP Pública, IP Local, DNS, MAC, Sistema Operativo, Prueba de Velocidad Internet* ] [[Ejemplo]](#punto1)
 
 :ballot_box_with_check: **Información Tarjeta de Red Wifi + Utilidades** --> [**Info Tarjeta de Red** *(Datos Técnicos, Interfaz, Drivers, Chipset, MACs, Modos Compatibles con la Tarjeta de Red (Modo Monitor, AP, P2P-client, etc), En que Modo se encuentra la Tarjeta de Red (Monitor o Managed), Tasa de Transferencia de Datos, Frecuencias Soportadas*) **Activar Modo Monitor** *(Activa el Modo Monitor y Cambia la MAC, NO HACE FALTA PARA USAR LA HERRAMIENTA),* **Restablecer Tarjeta de Red** *(Desactiva el Modo Monitor, Pone la MAC por defecto y Reinicia el NetworkManager)*]
 
@@ -66,6 +66,11 @@
   <summary>[ v1.0 ]</summary>
   <p align="justify">[#] Versión Original.</p>
 </details>
+
+## 📷 Captures 📷
+
+# Información Tarjeta de Red + Equipo <a name="punto1"></a>
+<p align="center"><img src=https://i.postimg.cc/XYGCX8nM/Net-Radar-1-0-es-Ejem-1.png width="350px"/></p>
 
 ## ⭐☕ Creado por XDeadHackerX ☕⭐
 
