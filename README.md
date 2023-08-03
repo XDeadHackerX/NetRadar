@@ -67,7 +67,7 @@
   <p align="justify">[#] Versión Original.</p>
 </details>
 
-## 📷 Captures 📷
+## 📷 Capturas 📷
 
 ### Información Tarjeta de Red + Equipo <a name="punto1"></a>
 <p align="center"><img src=https://i.postimg.cc/XYGCX8nM/Net-Radar-1-0-es-Ejem-1.png width="auto"/></p>

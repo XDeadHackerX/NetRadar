@@ -6,7 +6,7 @@
 
 <p align="center"><img width="120px" alt="Version" src="https://img.shields.io/badge/version-1.0-white.svg?style=for-the-badge"/></p>
 
-[![Net-Radar-1-0-en.png](https://i.postimg.cc/QdVRPy9c/Net-Radar-1-0-en.png)](https://postimg.cc/FY5WkGxK)
+[![Net-Radar-1-0-en.png](https://i.postimg.cc/ZKFHJDBn/Net-Radar-1-0-en.png)](https://postimg.cc/2VyhwGxN)
 
 ---
 
@@ -20,17 +20,17 @@
 
 ## 💡 Features 💡
 
-:ballot_box_with_check: **Network Card + Equipment Information** --> [*Public IP, Local IP, DNS, MAC, Operating System, Internet Speed Test* ]
+:ballot_box_with_check: **Network Card + Equipment Information** --> [*Public IP, Local IP, DNS, MAC, Operating System, Internet Speed Test*] [[Graphical Example]](#punto1)
 
-:ballot_box_with_check: **Information Wifi Network Card + Utilities** --> [**Info Network Card** *(Technical Data, Interface, Drivers, Chipset, MACs, Supported Modes for the Network Card (Monitor Mode, AP, P2P-client, etc), In which Mode is the Network Card (Monitor or Managed), Data Transfer Rate, Supported Frequencies*) **Enable Monitor Mode** *(Enable Monitor Mode and Change MAC, NO NEED TO USE TOOL),* **Reset Network Card** *(Disable Monitor Mode, Set Default MAC and Restart NetworkManager)*]
+:ballot_box_with_check: **Information Wifi Network Card + Utilities** --> [**Info Network Card** *(Technical Data, Interface, Drivers, Chipset, MACs, Supported Modes for the Network Card (Monitor Mode, AP, P2P-client, etc), In which Mode is the Network Card (Monitor or Managed), Data Transfer Rate, Supported Frequencies*) **Enable Monitor Mode** *(Enable Monitor Mode and Change MAC, NO NEED TO USE TOOL),* **Reset Network Card** *(Disable Monitor Mode, Set Default MAC and Restart NetworkManager)*] [[Graphical Example]](#punto2)
 
-:ballot_box_with_check: **Local Network Scan (One Device)** --> [**Quick Scan Ports** *(No. Ports, Status, Service of each Port, Mac, Mac Vendor), **Advanced Scan Ports** (No. Ports, Status, Service of each Port, Version of each Service, Content Information of each Port, Mac, Mac Vendor, Operating System, if it has Host Information on it), **Windows + Samba Scan** (Advanced Scan of all 65535 Ports, Enumeration of Users = In case of Power, Domain Acknowledgement = Name, SMB Acknowledgement = Permissions, Access, Class, Windows Assigned Device Name), **NetBios Scan** (Advanced Scan of all 65535 Ports, NetBios Name, Server Type/Name, Users = In case of Power)*]
+:ballot_box_with_check: **Local Network Scan (One Device)** --> [**Quick Scan Ports** *(No. Ports, Status, Service of each Port, Mac, Mac Vendor), **Advanced Scan Ports** (No. Ports, Status, Service of each Port, Version of each Service, Content Information of each Port, Mac, Mac Vendor, Operating System, if it has Host Information on it), **Windows + Samba Scan** (Advanced Scan of all 65535 Ports, Enumeration of Users = In case of Power, Domain Acknowledgement = Name, SMB Acknowledgement = Permissions, Access, Class, Windows Assigned Device Name), **NetBios Scan** (Advanced Scan of all 65535 Ports, NetBios Name, Server Type/Name, Users = In case of Power)*] [[Graphical Example]](#punto3)
 
-:ballot_box_with_check: **Local Network Scan (Multiple Devices** --> [**Quick Scan IPs** *(IPs, MAC, Mac Vendor), **Quick Scan IPs + Ports** (IPs, No. Ports, Service of each Port, Mac, Mac Vendor Mac),**Continuous Scan IPs** (IPs, MAC, Mac Vendor, Name, KB Sent and Received), **Advanced Scan IPs Ports** (No. Ports, Status, Service of each Port, Version of each Service, Content Information of each Port, Mac, Mac Vendor, Operating System, if it has Host Information about it), **Scanning for a Specific Service** (HTTP/HTTPS, SMB, FTP, SSH, Telnet, Windows, NetBIOS)*]
+:ballot_box_with_check: **Local Network Scan (Multiple Devices)** --> [**Quick Scan IPs** *(IPs, MAC, Mac Vendor), **Quick Scan IPs + Ports** (IPs, No. Ports, Service of each Port, Mac, Mac Vendor Mac),**Continuous Scan IPs** (IPs, MAC, Mac Vendor, Name, KB Sent and Received), **Advanced Scan IPs Ports** (No. Ports, Status, Service of each Port, Version of each Service, Content Information of each Port, Mac, Mac Vendor, Operating System, if it has Host Information about it), **Scanning for a Specific Service** (HTTP/HTTPS, SMB, FTP, SSH, Telnet, Windows, NetBIOS)*] [[Graphical Example]](#punto4)
 
-:ballot_box_with_check: **Scan Wifi Networks** --> [*Option to scan with* **Aircrack-ng, Bettercap, NmCli and Wash**. *In the case of using Aircrack-ng when the scan is finished it creates a **Chart** in which it shows you a **schema** of the **Wifi Networks Detected** (MAC, Distance from our Wifi Network Card, Beacons, Channel, Router Speed, Encryption, AUTH and the Name of the Wifi Network) and the **Devices connected** to each Network, showing you (Mac, Mac Manufacturer, Device Type and time connected to the Network)*].
+:ballot_box_with_check: **Scan Wifi Networks** --> [*Option to scan with* **Aircrack-ng, Bettercap, NmCli and Wash**. *In the case of using Aircrack-ng when the scan is finished it creates a **Chart** in which it shows you a **schema** of the **Wifi Networks Detected** (MAC, Distance from our Wifi Network Card, Beacons, Channel, Router Speed, Encryption, AUTH and the Name of the Wifi Network) and the **Devices connected** to each Network, showing you (Mac, Mac Manufacturer, Device Type and time connected to the Network)*]. [[Graphical Example]](#punto5)
 
-:ballot_box_with_check: **Scan Devices Connected to a Wifi Network** --> [*Displays the Wifi devices connected to a Wifi Network, when the scan is finished it creates a Graph showing you a scheme of the connected devices showing the MAC of the devices, the amount of Traffic, the distance between each device and our Network Card, the lost packets, Notes and Probes.*]
+:ballot_box_with_check: **Scan Devices Connected to a Wifi Network** --> [*Displays the Wifi devices connected to a Wifi Network, when the scan is finished it creates a Graph showing you a scheme of the connected devices showing the MAC of the devices, the amount of Traffic, the distance between each device and our Network Card, the lost packets, Notes and Probes.*] [[Graphical Example]](#punto5)
 
 ## 🛠 Install Tool 🛠
 
@@ -66,6 +66,27 @@
   <summary>[ v1.0 ]</summary>
   <p align="justify">[#] Original Version.</p>
 </details>
+
+## 📷 Screenshots 📷
+
+### Network Card + Equipment Information <a name="punto1"></a>
+<p align="center"><img src=https://i.postimg.cc/XYGCX8nM/Net-Radar-1-0-es-Ejem-1.png width="auto"/></p>
+
+### Information Wifi Network Card + Utilities <a name="punto2"></a>
+<p align="center"><img src=https://i.postimg.cc/5ts7VzWk/Net-Radar-1-0-es-Ejem-2-1.png width="auto"/></p>
+<p align="center"><img src=https://i.postimg.cc/ZqBQjPRm/Net-Radar-1-0-es-Ejem-2-2.png width="auto"/></p>
+
+### Local Network Scan (One Device) <a name="punto3"></a>
+<p align="center"><img src=https://i.postimg.cc/fRLTKb9s/Net-Radar-1-0-es-Ejem-3-1.png width="auto"/></p>
+<p align="center"><img src=https://i.postimg.cc/wxyrhYvr/Net-Radar-1-0-es-Ejem-3-2.png width="auto"/></p>
+
+### Local Network Scan (Multiple Devices) <a name="punto4"></a>
+<p align="center"><img src=https://i.postimg.cc/L59nF3nY/Net-Radar-1-0-es-Ejem-4-1.png width="auto"/></p>
+<p align="center"><img src=https://i.postimg.cc/VkKyKBcZ/Net-Radar-1-0-es-Ejem-4-2.png width="auto"/></p>
+
+### Scan Wifi Networks <a name="punto5"></a>
+<p align="center"><img src=https://i.postimg.cc/sDVGSsfP/Net-Radar-1-0-es-Ejem-5-1.png width="auto"/></p>
+<p align="center"><img src=https://i.postimg.cc/65fWrvbT/Net-Radar-1-0-es-Ejem-5-2.png width="auto"/></p>
 
 ## ⭐☕ Created by XDeadHackerX ☕⭐
 
