@@ -20,17 +20,17 @@
 
 ## 💡 Funciones 💡
 
-:ballot_box_with_check: **Información Tarjeta de Red + Equipo** --> [*IP Pública, IP Local, DNS, MAC, Sistema Operativo, Prueba de Velocidad Internet* ] [[Ejemplo]](#punto1)
+:ballot_box_with_check: **Información Tarjeta de Red + Equipo** --> [*IP Pública, IP Local, DNS, MAC, Sistema Operativo, Prueba de Velocidad Internet* ] [[Ejemplo Gráfico]](#punto1)
 
-:ballot_box_with_check: **Información Tarjeta de Red Wifi + Utilidades** --> [**Info Tarjeta de Red** *(Datos Técnicos, Interfaz, Drivers, Chipset, MACs, Modos Compatibles con la Tarjeta de Red (Modo Monitor, AP, P2P-client, etc), En que Modo se encuentra la Tarjeta de Red (Monitor o Managed), Tasa de Transferencia de Datos, Frecuencias Soportadas*) **Activar Modo Monitor** *(Activa el Modo Monitor y Cambia la MAC, NO HACE FALTA PARA USAR LA HERRAMIENTA),* **Restablecer Tarjeta de Red** *(Desactiva el Modo Monitor, Pone la MAC por defecto y Reinicia el NetworkManager)*] [[Ejemplo]](#punto2.1)
+:ballot_box_with_check: **Información Tarjeta de Red Wifi + Utilidades** --> [**Info Tarjeta de Red** *(Datos Técnicos, Interfaz, Drivers, Chipset, MACs, Modos Compatibles con la Tarjeta de Red (Modo Monitor, AP, P2P-client, etc), En que Modo se encuentra la Tarjeta de Red (Monitor o Managed), Tasa de Transferencia de Datos, Frecuencias Soportadas*) **Activar Modo Monitor** *(Activa el Modo Monitor y Cambia la MAC, NO HACE FALTA PARA USAR LA HERRAMIENTA),* **Restablecer Tarjeta de Red** *(Desactiva el Modo Monitor, Pone la MAC por defecto y Reinicia el NetworkManager)*] [[Ejemplo Gráfico]](#punto2)
 
-:ballot_box_with_check: **Escáner de Red Local (Un Dispositivo)** --> [**Escaneo Rápido Puertos** *(N° Puertos, Estado, Servicio de cada Puerto, Mac, Vendedor Mac), **Escaneo Avanzado Puertos** (N° Puertos, Estado, Servicio de cada Puerto, Versión de cada Servicio, Información del Contenido de cada Puerto, Mac, Vendedor Mac, Sistema Operativo, si tiene Host Información sobre él), **Escaneo Windows + Samba** (Escaneo Avanzado de los 65535 Puertos, Enumeración de Usuarios = En caso de Poder, Reconocimiento del Dominio = Nombre, Reconocimiento SMB = Permisos, Acceso, Clase, Nombre del Dispositivo Asignado por Windows), **Escaneo NetBios** (Escaneo Avanzado de los 65535 Puertos, Nombre de NetBios, Tipo/Nombre de Servidor, Usuarios = En caso de Poder)*]
+:ballot_box_with_check: **Escáner de Red Local (Un Dispositivo)** --> [**Escaneo Rápido Puertos** *(N° Puertos, Estado, Servicio de cada Puerto, Mac, Vendedor Mac), **Escaneo Avanzado Puertos** (N° Puertos, Estado, Servicio de cada Puerto, Versión de cada Servicio, Información del Contenido de cada Puerto, Mac, Vendedor Mac, Sistema Operativo, si tiene Host Información sobre él), **Escaneo Windows + Samba** (Escaneo Avanzado de los 65535 Puertos, Enumeración de Usuarios = En caso de Poder, Reconocimiento del Dominio = Nombre, Reconocimiento SMB = Permisos, Acceso, Clase, Nombre del Dispositivo Asignado por Windows), **Escaneo NetBios** (Escaneo Avanzado de los 65535 Puertos, Nombre de NetBios, Tipo/Nombre de Servidor, Usuarios = En caso de Poder)*] [[Ejemplo Gráfico]](#punto3)
 
-:ballot_box_with_check: **Escáner de Red Local (Varios Dispositivos** --> [**Escaneo Rápido IPs** *(IPs, MAC, Vendedor Mac), **Escaneo Rápido IPs + Puertos** (IPs, N° Puertos, Servicio de cada Puerto, Mac, Vendedor Mac),**Escaneo Continuo IPs** (IPs, MAC, Vendedor Mac, Name, KB Enviados y Recibidos), **Escaneo Avanzado IPs Puertos** (N° Puertos, Estado, Servicio de cada Puerto, Versión de cada Servicio, Información del Contenido de cada Puerto, Mac, Vendedor Mac, Sistema Operativo, si tiene Host Información sobre él), **Escaneo en Busca de un Servicio en Específico** (HTTP/HTTPS, SMB, FTP, SSH, Telnet, Windows, NetBIOS)*]
+:ballot_box_with_check: **Escáner de Red Local (Varios Dispositivos** --> [**Escaneo Rápido IPs** *(IPs, MAC, Vendedor Mac), **Escaneo Rápido IPs + Puertos** (IPs, N° Puertos, Servicio de cada Puerto, Mac, Vendedor Mac),**Escaneo Continuo IPs** (IPs, MAC, Vendedor Mac, Name, KB Enviados y Recibidos), **Escaneo Avanzado IPs Puertos** (N° Puertos, Estado, Servicio de cada Puerto, Versión de cada Servicio, Información del Contenido de cada Puerto, Mac, Vendedor Mac, Sistema Operativo, si tiene Host Información sobre él), **Escaneo en Busca de un Servicio en Específico** (HTTP/HTTPS, SMB, FTP, SSH, Telnet, Windows, NetBIOS)*] [[Ejemplo Gráfico]](#punto4)
 
-:ballot_box_with_check: **Escáner Redes Wifi** --> [*Opción de hacer el escaneo con* **Aircrack-ng, Bettercap, NmCli y Wash**. *En el caso de usar Aircrack-ng cuando finaliza el escaneo te crea un **Gráfico** en el que te muestra un **esquema** de las **Redes Wifi Detectadas** (MAC, Distancia desde nuestra Tarjeta de Red Wifi, Beacons, Canal, Velocidad del Router, Encriptación, AUTH y el Nombre de la Red Wifi) y los **Dispositivos conectados** a cada Red, mostrándote (Mac, Fabricante de la Mac, Tipo de dispositivo y tiempo conectados a la Red)*]
+:ballot_box_with_check: **Escáner Redes Wifi** --> [*Opción de hacer el escaneo con* **Aircrack-ng, Bettercap, NmCli y Wash**. *En el caso de usar Aircrack-ng cuando finaliza el escaneo te crea un **Gráfico** en el que te muestra un **esquema** de las **Redes Wifi Detectadas** (MAC, Distancia desde nuestra Tarjeta de Red Wifi, Beacons, Canal, Velocidad del Router, Encriptación, AUTH y el Nombre de la Red Wifi) y los **Dispositivos conectados** a cada Red, mostrándote (Mac, Fabricante de la Mac, Tipo de dispositivo y tiempo conectados a la Red)*] [[Ejemplo Gráfico]](#punto5)
 
-:ballot_box_with_check: **Escáner Dispositivos Conectados a una Red Wifi** --> [*Muestra los dispositivos Wifi conectados a una Red Wifi, cuando finaliza el escaneo te crea un Gráfico en el que te muestra un esquema de los dispositivos conectados mostrando la MAC de los dispositivos, la cantidad de Tráfico, la distancia entre cada dispositivo y nuestra Tarjeta de Red, los paquetes de perdida, Notas y Probes.*]
+:ballot_box_with_check: **Escáner Dispositivos Conectados a una Red Wifi** --> [*Muestra los dispositivos Wifi conectados a una Red Wifi, cuando finaliza el escaneo te crea un Gráfico en el que te muestra un esquema de los dispositivos conectados mostrando la MAC de los dispositivos, la cantidad de Tráfico, la distancia entre cada dispositivo y nuestra Tarjeta de Red, los paquetes de perdida, Notas y Probes.*] [[Ejemplo Gráfico]](#punto5)
 
 ## 🛠 Instalar Herramienta 🛠
 
@@ -70,10 +70,23 @@
 ## 📷 Captures 📷
 
 ### Información Tarjeta de Red + Equipo <a name="punto1"></a>
-<p align="center"><img src=https://i.postimg.cc/XYGCX8nM/Net-Radar-1-0-es-Ejem-1.png width="500px"/></p>
+<p align="center"><img src=https://i.postimg.cc/XYGCX8nM/Net-Radar-1-0-es-Ejem-1.png width="auto"/></p>
 
-**Información Tarjeta de Red Wifi + Utilidades** <a name="punto2.1"></a>
-<p align="center"><img src=https://i.postimg.cc/5ts7VzWk/Net-Radar-1-0-es-Ejem-2-1.png width="500px"/></p>
+### Información Tarjeta de Red Wifi + Utilidades <a name="punto2"></a>
+<p align="center"><img src=https://i.postimg.cc/5ts7VzWk/Net-Radar-1-0-es-Ejem-2-1.png width="auto"/></p>
+<p align="center"><img src=https://i.postimg.cc/ZqBQjPRm/Net-Radar-1-0-es-Ejem-2-2.png width="auto"/></p>
+
+### Escáner de Red Local (Un Dispositivo) <a name="punto3"></a>
+<p align="center"><img src=https://i.postimg.cc/fRLTKb9s/Net-Radar-1-0-es-Ejem-3-1.png width="auto"/></p>
+<p align="center"><img src=https://i.postimg.cc/wxyrhYvr/Net-Radar-1-0-es-Ejem-3-2.png width="auto"/></p>
+
+### Escáner de Red Local (Varios Dispositivos) <a name="punto4"></a>
+<p align="center"><img src=https://i.postimg.cc/L59nF3nY/Net-Radar-1-0-es-Ejem-4-1.png width="auto"/></p>
+<p align="center"><img src=https://i.postimg.cc/VkKyKBcZ/Net-Radar-1-0-es-Ejem-4-2.png width="auto"/></p>
+
+### Escáner Redes Wifi <a name="punto5"></a>
+<p align="center"><img src=https://i.postimg.cc/sDVGSsfP/Net-Radar-1-0-es-Ejem-5-1.png width="auto"/></p>
+<p align="center"><img src=https://i.postimg.cc/65fWrvbT/Net-Radar-1-0-es-Ejem-5-2.png width="auto"/></p>
 
 ## ⭐☕ Creado por XDeadHackerX ☕⭐
 
