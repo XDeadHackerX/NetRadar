@@ -46,11 +46,13 @@
 
 **5)** chmod 777 netradar.sh
 
-**6)** bash netradar.sh
+**6)** chmod 777 installer.sh
 
-**7)** Elige un idioma
+**7)** bash netradar.sh
 
-**8)** Ya podemos disfrutar de la herramienta
+**8)** Elige un idioma
+
+**9)** Ya podemos disfrutar de la herramienta
 
 ## 🎲 Tener en Cuenta 🎲
 
