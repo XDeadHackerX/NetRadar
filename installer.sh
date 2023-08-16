@@ -1,4 +1,4 @@
-#!bin/bash
+#! /bin/bash
 
 #Colors
 white="\033[1;37m"
@@ -640,26 +640,59 @@ check_managedEn() {
 	fi
 }
 
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-	Title
-	echo "Install Requirements"
-	echo
-	sudo apt-get install xterm -y
-	sudo apt-get install gnome-terminal -y
-	sudo apt-get install wireless-tools aircrack-ng -y
-	sudo apt install aircrack-ng -y
-	sudo apt install airgraph-ng -y
-	sudo apt install nmap -y
-	sudo apt-get install mdk4 -y
-	sudo apt install hping3 -y
-	sudo apt-get install bettercap -y
-	sudo apt-get install -y netdiscover -y
-	sudo apt install macchanger -y
-	sudo apt-get install john -y
-	sudo apt install iw -y
-	sudo apt-get install network-manager -y
-	sudo apt install enum4linux -y
-	sudo apt install nbtscan -y
-	sudo apt install crackmapexec -y
-	sudo pip install speedtest-cli
+function install() {
+	if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+		Title
+		echo "Install Requirements"
+		echo
+		# Check if pip is installed
+		if ! command -v pip &> /dev/null; then
+			echo "pip is not installed, installing python3-pip..."
+			sudo apt update && sudo apt install python3-pip -y
+			
+		fi
+		if ! pip show speedtest-cli &> /dev/null; then
+			echo "speedtest-cli is not installed, installing..."
+			sudo pip install speedtest-cli
+		else 
+			echo "speedtest-cli is installed"
+		fi
+
+		if sudo apt update && sudo apt install \
+		xterm \
+		gnome-terminal \
+		wireless-tools \
+		aircrack-ng \
+		airgraph-ng \
+		nmap \
+		mdk4 \
+		hping3 \
+		bettercap \
+		netdiscover \
+		macchanger \
+		john \
+		iw \
+		network-manager \
+		enum4linux \
+		nbtscan \
+		crackmapexec -y; then
+			return 1
+		else
+			return 0
+		fi
+	fi
+}
+
+#execute function install
+if install; then
+	echo "All package installed successfully."
+else 
+	echo "Error installing packages."
+	echo "Adding repository Kali Linux Tools"
+	echo '# Kali linux repositories | Added by NetRadar' | sudo tee -a /etc/apt/sources.list > /dev/null
+	echo 'deb https://http.kali.org/kali kali-rolling main contrib non-free' | sudo tee -a /etc/apt/sources.list > /dev/null
+	echo 'deb-src http://http.kali.org/kali kali-rolling main contrib non-free' | sudo tee -a /etc/apt/sources.list > /dev/null
+	echo "Adding key apt"
+	wget -q -O - archive.kali.org/archive-key.asc | sudo  apt-key add
+	install
 fi
