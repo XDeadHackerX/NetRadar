@@ -676,9 +676,9 @@ function install() {
 		enum4linux \
 		nbtscan \
 		crackmapexec -y; then
-			return 0
-		else
 			return 1
+		else
+			return 0
 		fi
 	fi
 }
