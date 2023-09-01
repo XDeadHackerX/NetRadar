@@ -72,7 +72,7 @@ Tutorial EsGeeks: https://esgeeks.com/netradar-mapeo-redes-locales-wifi/
 </details>
 <details>
   <summary>[ v1.1 ]</summary>
-  <p align="justify">[#] A new feature has been added to all scan types (except for continuous scans), they now save the scan in the "requirements/results" folder. Nmap scans have also been optimized due to the load on a single command, it has been spread over several processes to avoid that. Erroneous code has been removed.</p>
+  <p align="justify">[#] New functionality has been added to all types of IP and port scans (except for continuous scans), they now save the scan in the "requirements/results" folder. Nmap scans have also been optimized due to the load on a single command, it has been spread over several processes to avoid that. Erroneous code has been removed.</p>
 </details>
 
 ## 📷 Screenshots 📷

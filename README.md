@@ -72,7 +72,7 @@ Tutorial EsGeeks: https://esgeeks.com/netradar-mapeo-redes-locales-wifi/
 </details>
 <details>
   <summary>[ v1.1 ]</summary>
-  <p align="justify">[#] Sé a Agregado una nueva funcionalidad en todos los tipos de escaneos (a excepción de los continuos), ahora guardan el escaneo en la carpeta "requisitos/resultados". También se ha optimizado los escaneos con Nmap debido a la carga que suponía en un mismo comando, se ha repartido en varios procesos para evitar eso mismo. Se han eliminado código erróneo.</p>
+  <p align="justify">[#] Se ha Agregado una nueva funcionalidad en todos los tipos de escaneos de IPs y Puertos (a excepción de los continuos), ahora guardan el escaneo en la carpeta "requisitos/resultados". También se ha optimizado los escaneos con Nmap debido a la carga que suponía en un mismo comando, se ha repartido en varios procesos para evitar eso mismo. Se han eliminado código erróneo.</p>
 </details>
 
 ## 📷 Capturas 📷
