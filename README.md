@@ -8,6 +8,8 @@
 
 [![Net-Radar-1-1-es.png](https://i.postimg.cc/RZZR6LFR/Net-Radar-1-1-es.png)](https://postimg.cc/D8RsRs1J)
 
+Tutorial EsGeeks: https://esgeeks.com/netradar-mapeo-redes-locales-wifi/
+
 ---
 
 <p align="justify"><i>Buenas, soy <strong>XDeadHackerX</strong> y quiero presentaros mi nueva herramienta llamada <strong>NetRadar.</strong> Esta Tool está enfocada al <strong>Networking</strong> en concreto al <strong>Mapeo</strong> de <strong>Redes Locales y Redes Wifi.</strong> A Nivel de <strong>Red Local,</strong> es capaz de analizar todos los Dispositivos conectados (MAC, Vendedor MAC, Sistema Operativo, Nombre, Tipo de Dispositivo), todos los Puertos abiertos de cada IP (Puerto, Servicio, Versión del Servicio, Estado, Banner), encontrar Servidores (Nombre, Sistema Operativo, Versión del Servicio, Dominio, Puertos, etc.) A Nivel de <strong>Red Wifi</strong> nos encontramos con 4 tipos de escaneos totalmente automatizados y muy potentes (Aircrack-ng, Bettercap, NmCli y Wash), al terminar el escaneo nos generará un <strong>Gráfico</strong> *en el que te muestra un <strong>esquema</strong> de las <strong>Redes Wifi detectadas</strong> (MAC, Distancia desde nuestra Tarjeta de Red Wifi, Beacons, Canal, Velocidad del Router, Encriptación, AUTH y el Nombre de la Red Wifi) y los <strong>Dispositivos conectados</strong> a cada Red, mostrándote (Mac, Fabricante de la Mac, Tipo de dispositivo y tiempo conectados a la Red).</i></p>

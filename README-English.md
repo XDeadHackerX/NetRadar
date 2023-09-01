@@ -8,6 +8,8 @@
 
 [![Net-Radar-1-1-en.png](https://i.postimg.cc/kMNFTpRs/Net-Radar-1-1-en.png)](https://postimg.cc/dD1y1nBZ)
 
+Tutorial EsGeeks: https://esgeeks.com/netradar-mapeo-redes-locales-wifi/
+
 ---
 
 <p align="justify"><i>Good afternoon, I'm <strong>XDeadHackerX</strong> and I want to introduce you to my new tool called <strong>NetRadar.</strong> This tool is focused on <strong>Networking</strong>, specifically on the <strong>Mapping</strong> of <strong>Local Networks and Wifi Networks.</strong> At the <strong>Local Network</strong> level, it is capable of analyzing all connected devices (MAC, MAC Vendor, Operating System, Name, Device Type), all open ports of each IP (Port, Service, Service Version, State, Banner), and finding Servers (Name, Operating System, Service Version, Domain, Ports, etc.). At the <strong>Wifi Network</strong> level, we have 4 types of fully automated and powerful scans (Aircrack-ng, Bettercap, NmCli, and Wash). After finishing the scan, it will generate a <strong>Graph</strong> *that shows a <strong>schema</strong> of the <strong>detected Wifi Networks</strong> (MAC, Distance from our Wifi Network Card, Beacons, Channel, Router Speed, Encryption, AUTH, and Wifi Network Name) and the <strong>Devices connected</strong> to each Network, showing you (MAC, MAC Manufacturer, Device Type, and time connected to the Network).</i></p>
