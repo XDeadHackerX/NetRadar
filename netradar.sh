@@ -183,14 +183,24 @@ if [ -d requisitos/es ]
 											echo "###############################" 
 											echo "[#] Escaneando:" $Ip
 											echo "###############################"
-											echo
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											if [ $opc2 = y ]
 												then
-													sudo nmap -Pn $Ip
+													sudo nmap -Pn $Ip > requisitos/resultados/$filename
+													cat requisitos/resultados/$filename
 												else
-													sudo nmap -Pn -p- $Ip
+													sudo nmap -Pn -p- $Ip > requisitos/resultados/$filename
+													cat requisitos/resultados/$filename
 											fi
+											echo
+											echo
+											echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 											;;
 										2 )	Title
 											echo "[2] Escaneo Avanzado Puertos (SO, Versiones,.)"
@@ -198,17 +208,27 @@ if [ -d requisitos/es ]
 											read -p "[*] Escribe la Ip que desea escanear (Ej: 192.168.1.43): " Ip
 											read -p "[*] Escanear los 1000 puertos mas usados (y) o los 65535 (n)? (y/n): " opc2
 											echo
-											echo "###############################" 
+											echo "###############################"
 											echo "[#] Escaneando:" $Ip
 											echo "###############################"
-											echo
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											if [ $opc2 = y ]
 												then
-													sudo nmap -Pn -sV -sC -O $Ip
+													sudo nmap -Pn -sV -sC -O $Ip > requisitos/resultados/$filename
+													cat requisitos/resultados/$filename
 												else
-													sudo nmap -Pn -sV -sC -O -p- $Ip
+													sudo nmap -Pn -sV -sC -O -p- $Ip > requisitos/resultados/$filename
+													cat requisitos/resultados/$filename
 											fi
+											echo
+											echo
+											echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 											;;
 										3 )	Title
 											echo "[3] Escaneo Windows + Samba"
@@ -218,15 +238,22 @@ if [ -d requisitos/es ]
 											echo "###############################" 
 											echo "[#] Escaneando:" $Ip
 											echo "###############################"
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
+											echo
+											sudo nmap -Pn -sV -O -p- $Ip > requisitos/resultados/$filename
+											echo >> requisitos/resultados/$filename
+											echo >> requisitos/resultados/$filename
+											sudo enum4linux -a $Ip >> requisitos/resultados/$filename
+											cat requisitos/resultados/$filename
 											echo
 											echo
-											sudo nmap -Pn -sV -O -p- $Ip
-											echo
-											echo
-											sudo enum4linux -a $Ip
-											echo
-											echo
-											echo "[#] Los Usuarios Obtenido pueden ser erroneos"
+											echo "[#] Los Usuarios Obtenidos pueden ser erroneos"
+											echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 											;;
 										4 )	Title
 											echo "[4] Escaneo NetBios"
@@ -236,14 +263,23 @@ if [ -d requisitos/es ]
 											echo "###############################" 
 											echo "[#] Escaneando:" $Ip
 											echo "###############################"
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
+											echo
+											sudo nmap -Pn -sV -O -p- $Ip > requisitos/resultados/$filename
+											echo >> requisitos/resultados/$filename
+											echo >> requisitos/resultados/$filename
+											echo "IP address       NetBIOS Name     Server    User             MAC address" >> requisitos/resultados/$filename
+											echo "------------------------------------------------------------------------------" >> requisitos/resultados/$filename
+											sudo nbtscan -q $Ip >> requisitos/resultados/$filename
+											cat requisitos/resultados/$filename
 											echo
 											echo
-											sudo nmap -Pn -sV -O -p- $Ip
-											echo
-											echo
-											echo "IP address       NetBIOS Name     Server    User             MAC address"
-											echo "------------------------------------------------------------------------------"
-											sudo nbtscan -q $Ip
+											echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 											;;
 										5 )	Title
 											echo "[5] Todo (Puertos, Windows, Samba, NetBios)"
@@ -254,64 +290,83 @@ if [ -d requisitos/es ]
 											echo
 											if [ $opc2 = y ]
 												then
-													echo "###############################"
-													echo "[#] Puertos: "$Ip
-													echo "###############################"
+													scan_count=1
+													filename="scan_$scan_count.txt"
+													while [[ -e "requisitos/resultados/$filename" ]]; do
+													((scan_count++))
+													filename="scan_$scan_count.txt"
+													done
+													echo "###############################" > requisitos/resultados/$filename
+													echo "[#] Puertos: "$Ip >> requisitos/resultados/$filename
+													echo "###############################" >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													sudo nmap -Pn -sV -sC -O $Ip >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo "############################################" >> requisitos/resultados/$filename
+													echo "[#] Info Windows + Samba: "$Ip >> requisitos/resultados/$filename
+													echo "############################################" >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													sudo enum4linux -a $Ip >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo "###############################" >> requisitos/resultados/$filename
+													echo "[#] NetBios: "$Ip >> requisitos/resultados/$filename
+													echo "###############################" >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo "IP address       NetBIOS Name     Server    User             MAC address" >> requisitos/resultados/$filename
+													echo "------------------------------------------------------------------------------" >> requisitos/resultados/$filename
+													sudo nbtscan -q $Ip >> requisitos/resultados/$filename
+													cat requisitos/resultados/$filename
 													echo
 													echo
-													sudo nmap -Pn -sV -sC -O $Ip
-													echo
-													echo
-													echo
-													echo "############################################"
-													echo "[#] Info Windows + Samba: "$Ip
-													echo "############################################"
-													echo
-													echo
-													echo
-													sudo enum4linux -a $Ip
-													echo
-													echo
-													echo
-													echo "###############################"
-													echo "[#] NetBios: "$Ip
-													echo "###############################"
-													echo
-													echo
-													echo
-													echo "IP address       NetBIOS Name     Server    User             MAC address"
-													echo "------------------------------------------------------------------------------"
-													sudo nbtscan -q $Ip
-													echo
+													echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 												else
-													echo "###############################"
-													echo "[#] Puertos: "$Ip
-													echo "###############################"
+													scan_count=1
+													filename="scan_$scan_count.txt"
+													while [[ -e "requisitos/resultados/$filename" ]]; do
+													((scan_count++))
+													filename="scan_$scan_count.txt"
+													done
+													echo "###############################" > requisitos/resultados/$filename
+													echo "[#] Puertos: "$Ip >> requisitos/resultados/$filename
+													echo "###############################" >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													sudo nmap -Pn -sV -sC -O  -p- $Ip >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo "############################################" >> requisitos/resultados/$filename
+													echo "[#] Info Windows + Samba: "$Ip >> requisitos/resultados/$filename
+													echo "############################################" >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													sudo enum4linux -a $Ip >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo "###############################" >> requisitos/resultados/$filename
+													echo "[#] NetBios: "$Ip >> requisitos/resultados/$filename
+													echo "###############################" >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo >> requisitos/resultados/$filename
+													echo "IP address       NetBIOS Name     Server    User             MAC address" >> requisitos/resultados/$filename
+													echo "------------------------------------------------------------------------------" >> requisitos/resultados/$filename
+													sudo nbtscan -q $Ip >> requisitos/resultados/$filename
+													cat requisitos/resultados/$filename
 													echo
 													echo
-													sudo nmap -Pn -sV -sC -O -p- $Ip
-													echo
-													echo
-													echo
-													echo "############################################"
-													echo "[#] Info Windows + Samba: "$Ip
-													echo "############################################"
-													echo
-													echo
-													echo
-													sudo enum4linux -a $Ip
-													echo
-													echo
-													echo
-													echo "###############################"
-													echo "[#] NetBios: "$Ip
-													echo "###############################"
-													echo
-													echo
-													echo
-													echo "IP address       NetBIOS Name     Server    User             MAC address"
-													echo "------------------------------------------------------------------------------"
-													sudo nbtscan -q $Ip
+													echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 											fi
 											;;
 										6 )	bash netradar.sh
@@ -341,20 +396,44 @@ if [ -d requisitos/es ]
 											echo "[1] Escaneo Rapido IPs [NetDiscover]"
 											echo
 											read -p "[*] Escribe la Ip de Red + la Mascara (Ej: 192.168.1.0/24 o 128.0.0.0/16): " IpRed
-											sudo netdiscover -r $IpRed/24 -P
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
+											sudo netdiscover -r $IpRed/24 -P > requisitos/resultados/$filename
+											cat requisitos/resultados/$filename
+											echo
+											echo 
+											echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 											;;
 										2 )	Title
 											echo "[2] Escaneo Rapido IPs + Puertos [Nmap]"
 											echo
 											read -p "[*] Escribe la Ip de Red + la Mascara (Ej: 192.168.1.0/24 o 128.0.0.0/16): " IpRed
 											read -p "[*] Escanear los 1000 puertos mas usados (y) o los 65535 (n)? (y/n): " opc2
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											if [ $opc2 = y ]
 												then
-													sudo nmap -Pn $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+													echo
+													echo "[#] Escaneando Dispositivos y Puertos de la red" $IpRed
+													echo
+													sudo nmap -Pn $IpRed > requisitos/resultados/$filename
+													awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 												else
-													sudo nmap -Pn -p- $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+													sudo nmap -Pn -p- $IpRed > requisitos/resultados/$filename
+													awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 											fi
+											echo
+											echo 
+											echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 											;;
 										3 )	read -p "[*] Escribe la Ip de Red + la Mascara (Ej: 192.168.1.0/24 o 128.0.0.0/16): " IpRed
 											sudo netdiscover -r $IpRed/24
@@ -370,13 +449,27 @@ if [ -d requisitos/es ]
 											echo
 											read -p "[*] Escribe la Ip de Red + la Mascara (Ej: 192.168.1.0/24 o 128.0.0.0/16): " IpRed
 											read -p "[*] Escanear los 1000 puertos mas usados (y) o los 65535 (n)? (y/n): " opc2
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											if [ $opc2 = y ]
 												then
-													sudo nmap -Pn -sV -O $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+													echo
+													echo "[#] Escaneando Dispositivos y Puertos de la red" $IpRed
+													echo
+													sudo nmap -Pn -sV -O $IpRed > requisitos/resultados/$filename
+													awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 												else
-													sudo nmap -Pn -sV -O -p- $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+													sudo nmap -Pn -sV -O -p- $IpRed > requisitos/resultados/$filename
+													awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 											fi
+											echo
+											echo 
+											echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 											;;
 										6 )	Title
 											echo "[6] Buscar Servicios [HTTP, SMB, FTP, SSH,.]"
@@ -402,13 +495,20 @@ if [ -d requisitos/es ]
 															echo "##############################"
 															echo "[#] Servicio: HTTP/HTTPS"
 															echo "##############################"
+															scan_count=1
+															filename="scan_$scan_count.txt"
+															while [[ -e "requisitos/resultados/$filename" ]]; do
+															((scan_count++))
+															filename="scan_$scan_count.txt"
+															done
 															echo
 															echo
-															sudo nmap -Pn -sV -T4 -p 80,443 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+															sudo nmap -Pn -sV -T4 -p 80,443 --open $IpRed > requisitos/resultados/$filename
+															awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 															echo
 															echo
+															echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 															echo "[#] Recomiendo hacer un Escaneo Avanzado y Especifico a la Ip que nos interesa usando la Opcion 3 en el Menu Principal"
-															echo
 															;;
 														2 )	read -p "[*] Escribe la Ip de Red + la Mascara (Ej: 192.168.1.0/24 o 128.0.0.0/16): " IpRed
 															echo
@@ -417,16 +517,23 @@ if [ -d requisitos/es ]
 															echo "##############################"
 															echo "[#] Servicio: SMB"
 															echo "##############################"
+															scan_count=1
+															filename="scan_$scan_count.txt"
+															while [[ -e "requisitos/resultados/$filename" ]]; do
+															((scan_count++))
+															filename="scan_$scan_count.txt"
+															done
 															echo
 															echo
-															sudo nmap -Pn -sV -T4 -p 445 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+															sudo nmap -Pn -sV -T4 -p 445 --open $IpRed > requisitos/resultados/$filename
+															awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 															echo
 															echo
 															sudo crackmapexec smb $IpRed 2>/dev/null
 															echo
 															echo
+															echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 															echo "[#] Recomiendo hacer un Escaneo Avanzado y Especifico a la Ip que nos interesa usando la Opcion 3 en el Menu Principal"
-															echo
 															;;
 														3 )	read -p "[*] Escribe la Ip de Red + la Mascara (Ej: 192.168.1.0/24 o 128.0.0.0/16): " IpRed
 															echo
@@ -435,16 +542,23 @@ if [ -d requisitos/es ]
 															echo "##############################"
 															echo "[#] Servicio: FTP"
 															echo "##############################"
+															scan_count=1
+															filename="scan_$scan_count.txt"
+															while [[ -e "requisitos/resultados/$filename" ]]; do
+															((scan_count++))
+															filename="scan_$scan_count.txt"
+															done
 															echo
 															echo
-															sudo nmap -Pn -sV -T4 -p 21 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+															sudo nmap -Pn -sV -T4 -p 21 --open $IpRed > requisitos/resultados/$filename
+															awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 															echo
 															echo
-															sudo crackmapexec ftp $IpRed 2>/dev/null
+															sudo crackmapexec ftp $IpRed 2>/dev/null 
 															echo
 															echo
+															echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 															echo "[#] Recomiendo hacer un Escaneo Avanzado y Especifico a la Ip que nos interesa usando la Opcion 3 en el Menu Principal"
-															echo
 															;;
 														4 )	read -p "[*] Escribe la Ip de Red + la Mascara (Ej: 192.168.1.0/24 o 128.0.0.0/16): " IpRed
 															echo
@@ -453,16 +567,23 @@ if [ -d requisitos/es ]
 															echo "##############################"
 															echo "[#] Servicio: SSH"
 															echo "##############################"
+															scan_count=1
+															filename="scan_$scan_count.txt"
+															while [[ -e "requisitos/resultados/$filename" ]]; do
+															((scan_count++))
+															filename="scan_$scan_count.txt"
+															done
 															echo
 															echo
-															sudo nmap -Pn -sV -T4 -p 22 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+															sudo nmap -Pn -sV -T4 -p 22 --open $IpRed > requisitos/resultados/$filename
+															awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 															echo
-															echo
+															echo 
 															sudo crackmapexec ssh $IpRed 2>/dev/null
 															echo
 															echo
+															echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 															echo "[#] Recomiendo hacer un Escaneo Avanzado y Especifico a la Ip que nos interesa usando la Opcion 3 en el Menu Principal"
-															echo
 															;;
 														5 )	read -p "[*] Escribe la Ip de Red + la Mascara (Ej: 192.168.1.0/24 o 128.0.0.0/16): " IpRed
 															echo
@@ -471,13 +592,20 @@ if [ -d requisitos/es ]
 															echo "##############################"
 															echo "[#] Servicio: Telnet"
 															echo "##############################"
+															scan_count=1
+															filename="scan_$scan_count.txt"
+															while [[ -e "requisitos/resultados/$filename" ]]; do
+															((scan_count++))
+															filename="scan_$scan_count.txt"
+															done
 															echo
 															echo
-															sudo nmap -Pn -sV -T4 -p 23 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+															sudo nmap -Pn -sV -T4 -p 23 --open $IpRed > requisitos/resultados/$filename
+															awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 															echo
 															echo
+															echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 															echo "[#] Recomiendo hacer un Escaneo Avanzado y Especifico a la Ip que nos interesa usando la Opcion 3 en el Menu Principal"
-															echo
 															;;
 														6 )	read -p "[*] Escribe la Ip de Red + la Mascara (Ej: 192.168.1.0/24 o 128.0.0.0/16): " IpRed
 															echo
@@ -486,13 +614,20 @@ if [ -d requisitos/es ]
 															echo "##############################"
 															echo "[#] Servicio: Windows"
 															echo "##############################"
+															scan_count=1
+															filename="scan_$scan_count.txt"
+															while [[ -e "requisitos/resultados/$filename" ]]; do
+															((scan_count++))
+															filename="scan_$scan_count.txt"
+															done
 															echo
 															echo
-															sudo nmap -Pn -sV -T4 -p 135,139,445 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+															sudo nmap -Pn -sV -T4 -p 135,139,445 --open $IpRed > requisitos/resultados/$filename
+															awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 															echo
 															echo
+															echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 															echo "[#] Recomiendo hacer un Escaneo Avanzado y Especifico a la Ip que nos interesa usando la Opcion 3 en el Menu Principal"
-															echo
 															;;
 														7 )	read -p "[*] Escribe la Ip de Red + la Mascara (Ej: 192.168.1.0/24 o 128.0.0.0/16): " IpRed
 															echo
@@ -501,18 +636,25 @@ if [ -d requisitos/es ]
 															echo "##############################"
 															echo "[#] Servicio: NetBIOS"
 															echo "##############################"
+															scan_count=1
+															filename="scan_$scan_count.txt"
+															while [[ -e "requisitos/resultados/$filename" ]]; do
+															((scan_count++))
+															filename="scan_$scan_count.txt"
+															done
 															echo
 															echo
-															sudo nmap -Pn -sV -T4 -p 137,138,139 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+															sudo nmap -Pn -sV -T4 -p 137,138,139 --open $IpRed > requisitos/resultados/$filename
+															echo >> requisitos/resultados/$filename
+															echo >> requisitos/resultados/$filename
+															echo "IP address       NetBIOS Name     Server    User             MAC address" >> requisitos/resultados/$filename
+															echo "------------------------------------------------------------------------------" >> requisitos/resultados/$filename
+															sudo nbtscan -q $IpRed >> requisitos/resultados/$filename
+															awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 															echo
 															echo
-															echo "IP address       NetBIOS Name     Server    User             MAC address"
-															echo "------------------------------------------------------------------------------"
-															sudo nbtscan -q $IpRed
-															echo
-															echo
+															echo "[#] Ruta del Fichero del Escaneo: [NetRadar/requisitos/resultados/$filename]"
 															echo "[#] Recomiendo hacer un Escaneo Avanzado y Especifico a la Ip que nos interesa usando la Opcion 3 en el Menu Principal"
-															echo
 															;;
 														8 )	exit
 															;;
@@ -585,7 +727,7 @@ if [ -d requisitos/es ]
 										echo "=============================="
 										echo
 										echo
-										echo "[*] Ruta del Grafico: [Wifi_Troll/requisitos/resultados/grafico_global]"
+										echo "[*] Ruta del Grafico: [NetRadar/requisitos/resultados/grafico_global]"
 										echo "[*] Guarda la Imagen en otro directorio o con otro nombre para que no sea remplazada al volver a ejecutar esta opcion"
 										echo
 										read -p "[*] Quieres abrir el Grafico? (y/n): " open
@@ -714,7 +856,7 @@ if [ -d requisitos/es ]
 							sudo aircrack-ng -J requisitos/resultados/$bssid/captura_$bssid-02 requisitos/resultados/$bssid/captura_$bssid-01.cap | awk 'FNR>= 20{print}'
 							sudo hccap2john requisitos/resultados/$bssid/captura_$bssid-02.hccap > requisitos/resultados/$bssid/Hash_$bssid-03
 							echo
-							echo "[*] Ruta del Grafico: [Wifi_Troll/requisitos/resultados/$bssid/grafico_$bssid]"
+							echo "[*] Ruta del Grafico: [NetRadar/requisitos/resultados/$bssid/grafico_$bssid]"
 							echo "[*] Guarda la carpeta en otro directorio o con otro nombre para que no se remplace al volver a ejecutar esta opcion"
 							echo
 							read -p "[*] Quieres abrir el Grafico? (y/n): " open
@@ -908,14 +1050,24 @@ if [ -d requisitos/es ]
 								echo "###############################" 
 								echo "[#] Scanning:" $Ip
 								echo "###############################"
-								echo
+								scan_count=1
+								filename="scan_$scan_count.txt"
+								while [[ -e "requisitos/resultados/$filename" ]]; do
+								((scan_count++))
+								filename="scan_$scan_count.txt"
+								done
 								echo
 								if [ $opc2 = y ]
 								then
-									sudo nmap -Pn $Ip
+									sudo nmap -Pn $Ip > requisitos/resultados/$filename
+									cat requisitos/resultados/$filename
 								else
-									sudo nmap -Pn -p- $Ip
+									sudo nmap -Pn -p- $Ip > requisitos/resultados/$filename
+									cat requisitos/resultados/$filename
 								fi
+								echo
+								echo
+								echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 								;;
 							2 )	TitleEn
 								echo "[2] Advanced Port Scan (OS, Versions, etc.)"
@@ -926,14 +1078,24 @@ if [ -d requisitos/es ]
 								echo "###############################" 
 								echo "[#] Scanning:" $Ip
 								echo "###############################"
-								echo
+								scan_count=1
+								filename="scan_$scan_count.txt"
+								while [[ -e "requisitos/resultados/$filename" ]]; do
+								((scan_count++))
+								filename="scan_$scan_count.txt"
+								done
 								echo
 								if [ $opc2 = y ]
 								then
-									sudo nmap -Pn -sV -sC -O $Ip
+									sudo nmap -Pn -sV -sC -O $Ip > requisitos/resultados/$filename
+									cat requisitos/resultados/$filename
 								else
-									sudo nmap -Pn -sV -sC -O -p- $Ip
+									sudo nmap -Pn -sV -sC -O -p- $Ip > requisitos/resultados/$filename
+									cat requisitos/resultados/$filename
 								fi
+								echo
+								echo
+								echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 								;;
 							3 )	TitleEn
 								echo "[3] Windows + Samba Scan"
@@ -943,15 +1105,22 @@ if [ -d requisitos/es ]
 								echo "###############################" 
 								echo "[#] Scanning:" $Ip
 								echo "###############################"
+								scan_count=1
+								filename="scan_$scan_count.txt"
+								while [[ -e "requisitos/resultados/$filename" ]]; do
+								((scan_count++))
+								filename="scan_$scan_count.txt"
+								done
 								echo
-								echo
-								sudo nmap -Pn -sV -O -p- $Ip
-								echo
-								echo
-								sudo enum4linux -a $Ip
+								sudo nmap -Pn -sV -O -p- $Ip > requisitos/resultados/$filename
+								echo >> requisitos/resultados/$filename
+								echo >> requisitos/resultados/$filename
+								sudo enum4linux -a $Ip >> requisitos/resultados/$filename
+								cat requisitos/resultados/$filename
 								echo
 								echo
 								echo "[#] The Obtained Users may be incorrect"
+								echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 								;;
 							4 )	TitleEn
 								echo "[4] NetBios Scan"
@@ -961,14 +1130,23 @@ if [ -d requisitos/es ]
 								echo "###############################" 
 								echo "[#] Scanning:" $Ip
 								echo "###############################"
+								scan_count=1
+								filename="scan_$scan_count.txt"
+								while [[ -e "requisitos/resultados/$filename" ]]; do
+								((scan_count++))
+								filename="scan_$scan_count.txt"
+								done
+								echo
+								sudo nmap -Pn -sV -O -p- $Ip > requisitos/resultados/$filename
+								echo >> requisitos/resultados/$filename
+								echo >> requisitos/resultados/$filename
+								echo "IP address       NetBIOS Name     Server    User             MAC address" >> requisitos/resultados/$filename
+								echo "------------------------------------------------------------------------------" >> requisitos/resultados/$filename
+								sudo nbtscan -q $Ip >> requisitos/resultados/$filename
+								cat requisitos/resultados/$filename
 								echo
 								echo
-								sudo nmap -Pn -sV -O -p- $Ip
-								echo
-								echo
-								echo "IP address       NetBIOS Name     Server    User             MAC address"
-								echo "------------------------------------------------------------------------------"
-								sudo nbtscan -q $Ip
+								echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 								;;
 							5 )	TitleEn
 								echo "[5] All (Ports, Windows, Samba, NetBios)"
@@ -979,64 +1157,82 @@ if [ -d requisitos/es ]
 								echo
 								if [ $opc2 = y ]
 								then
-									echo "###############################"
-									echo "[#] Ports: "$Ip
-									echo "###############################"
+									scan_count=1
+									filename="scan_$scan_count.txt"
+									while [[ -e "requisitos/resultados/$filename" ]]; do
+									((scan_count++))
+									filename="scan_$scan_count.txt"
+									done
+									echo "###############################" > requisitos/resultados/$filename
+									echo "[#] Ports: "$Ip >> requisitos/resultados/$filename
+									echo "###############################" >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									sudo nmap -Pn -sV -sC -O $Ip >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo "############################################" >> requisitos/resultados/$filename
+									echo "[#] Windows + Samba Info: "$Ip >> requisitos/resultados/$filename
+									echo "############################################" >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									sudo enum4linux -a $Ip >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo "###############################" >> requisitos/resultados/$filename
+									echo "[#] NetBios: "$Ip >> requisitos/resultados/$filename
+									echo "###############################" >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo "IP address       NetBIOS Name     Server    User             MAC address" >> requisitos/resultados/$filename
+									echo "------------------------------------------------------------------------------" >> requisitos/resultados/$filename
+									sudo nbtscan -q $Ip >> requisitos/resultados/$filename
+									cat requisitos/resultados/$filename
 									echo
 									echo
-									sudo nmap -Pn -sV -sC -O $Ip
-									echo
-									echo
-									echo
-									echo "############################################"
-									echo "[#] Windows + Samba Info: "$Ip
-									echo "############################################"
-									echo
-									echo
-									echo
-									sudo enum4linux -a $Ip
-									echo
-									echo
-									echo
-									echo "###############################"
-									echo "[#] NetBios: "$Ip
-									echo "###############################"
-									echo
-									echo
-									echo
-									echo "IP address       NetBIOS Name     Server    User             MAC address"
-									echo "------------------------------------------------------------------------------"
-									sudo nbtscan -q $Ip
-									echo
+									echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 								else
-									echo "###############################"
-									echo "[#] Ports: "$Ip
-									echo "###############################"
+									scan_count=1
+									filename="scan_$scan_count.txt"
+									while [[ -e "requisitos/resultados/$filename" ]]; do
+									((scan_count++))
+									filename="scan_$scan_count.txt"
+									done
+									echo "###############################" > requisitos/resultados/$filename
+									echo "[#] Ports: "$Ip >> requisitos/resultados/$filename
+									echo "###############################" >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									sudo nmap -Pn -sV -sC -O -p- $Ip >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo "############################################" >> requisitos/resultados/$filename
+									echo "[#] Windows + Samba Info: "$Ip >> requisitos/resultados/$filename
+									echo "############################################" >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									sudo enum4linux -a $Ip >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo "###############################" >> requisitos/resultados/$filename
+									echo "[#] NetBios: "$Ip >> requisitos/resultados/$filename
+									echo "###############################" >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo >> requisitos/resultados/$filename
+									echo "IP address       NetBIOS Name     Server    User             MAC address" >> requisitos/resultados/$filename
+									echo "------------------------------------------------------------------------------" >> requisitos/resultados/$filename
+									sudo nbtscan -q $Ip >> requisitos/resultados/$filename
 									echo
 									echo
-									sudo nmap -Pn -sV -sC -O -p- $Ip
-									echo
-									echo
-									echo
-									echo "############################################"
-									echo "[#] Windows + Samba Info: "$Ip
-									echo "############################################"
-									echo
-									echo
-									echo
-									sudo enum4linux -a $Ip
-									echo
-									echo
-									echo
-									echo "###############################"
-									echo "[#] NetBios: "$Ip
-									echo "###############################"
-									echo
-									echo
-									echo
-									echo "IP address       NetBIOS Name     Server    User             MAC address"
-									echo "------------------------------------------------------------------------------"
-									sudo nbtscan -q $Ip
+									echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 								fi
 								;;
 							6 )	bash netradar.sh
@@ -1066,20 +1262,44 @@ if [ -d requisitos/es ]
 								echo "[1] Quick IP Scan [NetDiscover]"
 								echo
 								read -p "[*] Enter the Network IP + Mask (E.g.: 192.168.1.0/24 or 128.0.0.0/16): " IpRed
-								sudo netdiscover -r $IpRed/24 -P
+								scan_count=1
+								filename="scan_$scan_count.txt"
+								while [[ -e "requisitos/resultados/$filename" ]]; do
+								((scan_count++))
+								filename="scan_$scan_count.txt"
+								done
+								sudo netdiscover -r $IpRed/24 -P > requisitos/resultados/$filename
+								cat requisitos/resultados/$filename
+								echo
+								echo
+								echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 								;;
 							2 )	TitleEn
 								echo "[2] Quick IP + Port Scan [Nmap]"
 								echo
 								read -p "[*] Enter the Network IP + Mask (E.g.: 192.168.1.0/24 or 128.0.0.0/16): " IpRed
 								read -p "[*] Scan the 1000 most common ports (y) or all 65535 (n)? (y/n): " opc2
+								scan_count=1
+								filename="scan_$scan_count.txt"
+								while [[ -e "requisitos/resultados/$filename" ]]; do
+								((scan_count++))
+								filename="scan_$scan_count.txt"
+								done
 								echo
 								if [ $opc2 = y ]
-								then
-									sudo nmap -Pn $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
-								else
-									sudo nmap -Pn -p- $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+									then
+										echo
+										echo "[#] Scanning Network Devices and Ports" $IpRed
+										echo
+										sudo nmap -Pn $IpRed > requisitos/resultados/$filename
+										awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
+									else
+										sudo nmap -Pn -p- $IpRed > requisitos/resultados/$filename
+										awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 								fi
+								echo
+								echo 
+								echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 								;;
 							3 )	read -p "[*] Enter the Network IP + Mask (E.g.: 192.168.1.0/24 or 128.0.0.0/16): " IpRed
 								sudo netdiscover -r $IpRed/24
@@ -1095,13 +1315,27 @@ if [ -d requisitos/es ]
 								echo
 								read -p "[*] Enter the Network IP + Mask (E.g.: 192.168.1.0/24 or 128.0.0.0/16): " IpRed
 								read -p "[*] Scan the 1000 most common ports (y) or all 65535 (n)? (y/n): " opc2
+								scan_count=1
+								filename="scan_$scan_count.txt"
+								while [[ -e "requisitos/resultados/$filename" ]]; do
+								((scan_count++))
+								filename="scan_$scan_count.txt"
+								done
 								echo
 								if [ $opc2 = y ]
-								then
-									sudo nmap -Pn -sV -O $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
-								else
-									sudo nmap -Pn -sV -O -p- $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+									then
+										echo
+										echo "[#] Scanning Network Devices and Ports" $IpRed
+										echo
+										sudo nmap -Pn -sV -O $IpRed > requisitos/resultados/$filename
+										awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
+									else
+										sudo nmap -Pn -sV -O -p- $IpRed > requisitos/resultados/$filename
+										awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 								fi
+								echo
+								echo 
+								echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 								;;
 							6 )	TitleEn
 								echo "[6] Search for Services [HTTP, SMB, FTP, SSH,.]"
@@ -1127,11 +1361,19 @@ if [ -d requisitos/es ]
 											echo "##############################"
 											echo "[#] Service: HTTP/HTTPS"
 											echo "##############################"
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											echo
-											sudo nmap -Pn -sV -T4 -p 80,443 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+											sudo nmap -Pn -sV -T4 -p 80,443 --open $IpRed > requisitos/resultados/$filename
+											awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 											echo
 											echo
+											echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 											echo "[#] I recommend performing an Advanced and Specific Scan for the IP of interest using Option 3 in the Main Menu"
 											echo
 											;;
@@ -1142,14 +1384,22 @@ if [ -d requisitos/es ]
 											echo "##############################"
 											echo "[#] Service: SMB"
 											echo "##############################"
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											echo
-											sudo nmap -Pn -sV -T4 -p 445 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+											sudo nmap -Pn -sV -T4 -p 445 --open $IpRed > requisitos/resultados/$filename
+											awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 											echo
 											echo
 											sudo crackmapexec smb $IpRed 2>/dev/null
 											echo
 											echo
+											echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 											echo "[#] I recommend performing an Advanced and Specific Scan for the IP of interest using Option 3 in the Main Menu"
 											echo
 											;;
@@ -1160,14 +1410,22 @@ if [ -d requisitos/es ]
 											echo "##############################"
 											echo "[#] Service: FTP"
 											echo "##############################"
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											echo
-											sudo nmap -Pn -sV -T4 -p 21 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+											sudo nmap -Pn -sV -T4 -p 21 --open $IpRed > requisitos/resultados/$filename
+											awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 											echo
 											echo
 											sudo crackmapexec ftp $IpRed 2>/dev/null
 											echo
 											echo
+											echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 											echo "[#] I recommend performing an Advanced and Specific Scan for the IP of interest using Option 3 in the Main Menu"
 											echo
 											;;
@@ -1178,14 +1436,22 @@ if [ -d requisitos/es ]
 											echo "##############################"
 											echo "[#] Service: SSH"
 											echo "##############################"
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											echo
-											sudo nmap -Pn -sV -T4 -p 22 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+											sudo nmap -Pn -sV -T4 -p 22 --open $IpRed > requisitos/resultados/$filename
+											awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 											echo
 											echo
 											sudo crackmapexec ssh $IpRed 2>/dev/null
 											echo
 											echo
+											echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 											echo "[#] I recommend performing an Advanced and Specific Scan for the IP of interest using Option 3 in the Main Menu"
 											echo
 											;;
@@ -1196,11 +1462,19 @@ if [ -d requisitos/es ]
 											echo "##############################"
 											echo "[#] Service: Telnet"
 											echo "##############################"
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											echo
-											sudo nmap -Pn -sV -T4 -p 23 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+											sudo nmap -Pn -sV -T4 -p 23 --open $IpRed > requisitos/resultados/$filename
+											awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 											echo
 											echo
+											echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 											echo "[#] I recommend performing an Advanced and Specific Scan for the IP of interest using Option 3 in the Main Menu"
 											echo
 											;;
@@ -1211,11 +1485,19 @@ if [ -d requisitos/es ]
 											echo "##############################"
 											echo "[#] Service: Windows"
 											echo "##############################"
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											echo
-											sudo nmap -Pn -sV -T4 -p 135,139,445 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+											sudo nmap -Pn -sV -T4 -p 135,139,445 --open $IpRed > requisitos/resultados/$filename
+											awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 											echo
 											echo
+											echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 											echo "[#] I recommend performing an Advanced and Specific Scan for the IP of interest using Option 3 in the Main Menu"
 											echo
 											;;
@@ -1226,16 +1508,24 @@ if [ -d requisitos/es ]
 											echo "##############################"
 											echo "[#] Service: NetBIOS"
 											echo "##############################"
+											scan_count=1
+											filename="scan_$scan_count.txt"
+											while [[ -e "requisitos/resultados/$filename" ]]; do
+											((scan_count++))
+											filename="scan_$scan_count.txt"
+											done
 											echo
 											echo
-											sudo nmap -Pn -sV -T4 -p 137,138,139 --open $IpRed | awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1'
+											sudo nmap -Pn -sV -T4 -p 137,138,139 --open $IpRed > requisitos/resultados/$filename
+											echo >> requisitos/resultados/$filename
+											echo >> requisitos/resultados/$filename
+											echo "IP address       NetBIOS Name     Server    User             MAC address" >> requisitos/resultados/$filename
+											echo "------------------------------------------------------------------------------" >> requisitos/resultados/$filename
+											sudo nbtscan -q $IpRed >> requisitos/resultados/$filename
+											awk '/^Nmap scan report/{printf "* %s\n", $NF; next} 1' requisitos/resultados/$filename
 											echo
 											echo
-											echo "IP address       NetBIOS Name     Server    User             MAC address"
-											echo "------------------------------------------------------------------------------"
-											sudo nbtscan -q $IpRed
-											echo
-											echo
+											echo "[#] Scan File Path: [NetRadar/requisitos/resultados/$filename]"
 											echo "[#] I recommend performing an Advanced and Specific Scan for the IP of interest using Option 3 in the Main Menu"
 											echo
 											;;
@@ -1310,7 +1600,7 @@ if [ -d requisitos/es ]
 										echo "=============================="
 										echo
 										echo
-										echo "[*] Graph Path: [Wifi_Troll/requisitos/resultados/grafico_global]"
+										echo "[*] Graph Path: [NetRadar/requisitos/resultados/grafico_global]"
 										echo "[*] Save the Image in another directory or with another name to avoid overwriting when running this option again"
 										echo
 										read -p "[*] Do you want to open the Graph? (y/n): " open
@@ -1439,7 +1729,7 @@ if [ -d requisitos/es ]
 								sudo aircrack-ng -J requisitos/resultados/$bssid/captura_$bssid-02 requisitos/resultados/$bssid/captura_$bssid-01.cap | awk 'FNR>= 20{print}'
 								sudo hccap2john requisitos/resultados/$bssid/captura_$bssid-02.hccap > requisitos/resultados/$bssid/Hash_$bssid-03
 								echo
-								echo "[*] Graph Path: [Wifi_Troll/requisitos/resultados/$bssid/grafico_$bssid]"
+								echo "[*] Graph Path: [NetRadar/requisitos/resultados/$bssid/grafico_$bssid]"
 								echo "[*] Save the folder in another directory or with another name to avoid overwriting when running this option again"
 								echo
 								read -p "[*] Do you want to open the Graph? (y/n): " open

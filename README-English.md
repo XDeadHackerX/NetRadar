@@ -4,9 +4,9 @@
 
 > Tool created by XDeadHacker
 
-<p align="center"><img width="120px" alt="Version" src="https://img.shields.io/badge/version-1.0-white.svg?style=for-the-badge"/></p>
+<p align="center"><img width="120px" alt="Version" src="https://img.shields.io/badge/version-1.1-white.svg?style=for-the-badge"/></p>
 
-[![Net-Radar-1-0-en.png](https://i.postimg.cc/ZKFHJDBn/Net-Radar-1-0-en.png)](https://postimg.cc/2VyhwGxN)
+[![Net-Radar-1-1-en.png](https://i.postimg.cc/kMNFTpRs/Net-Radar-1-1-en.png)](https://postimg.cc/dD1y1nBZ)
 
 ---
 
@@ -67,6 +67,10 @@
 <details>
   <summary>[ v1.0 ]</summary>
   <p align="justify">[#] Original Version.</p>
+</details>
+<details>
+  <summary>[ v1.1 ]</summary>
+  <p align="justify">[#] A new feature has been added to all scan types (except for continuous scans), they now save the scan in the "requirements/results" folder. Nmap scans have also been optimized due to the load on a single command, it has been spread over several processes to avoid that. Erroneous code has been removed.</p>
 </details>
 
 ## 📷 Screenshots 📷

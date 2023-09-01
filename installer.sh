@@ -25,7 +25,7 @@ function Title {
 	echo "          |==|_______D        | |\  ||  __/| |_  | | \ \| (_| || (_| || (_| || |       |==|_______D"
 	echo "                /|\           |_| \_| \___| \__| |_|  \_\\__,__| \__,_| \__,_||_|             /|\   "
 	echo "               / | \          __________________________________________________            / | \  "
-	echo "              /  |  \               📡  Created by: XDeadHackerX v1.0  📡                  /  |  \ " 
+	echo "              /  |  \               📡  Created by: XDeadHackerX v1.1  📡                  /  |  \ " 
 	echo "          -------------------------------------------------------------------------------------------"
 	echo "           Cualquier acción y o actividad relacionada con 𝓝𝓮𝓽𝓡𝓪𝓭𝓪𝓻 es únicamente su responsabilidad"
 	echo "          -------------------------------------------------------------------------------------------"
@@ -43,7 +43,7 @@ function TitleEn {
 	echo "          |==|_______D        | |\  ||  __/| |_  | | \ \| (_| || (_| || (_| || |       |==|_______D"
 	echo "                /|\           |_| \_| \___| \__| |_|  \_\\__,__| \__,_| \__,_||_|             /|\   "
 	echo "               / | \          __________________________________________________            / | \  "
-	echo "              /  |  \               📡  Created by: XDeadHackerX v1.0  📡                  /  |  \ " 
+	echo "              /  |  \               📡  Created by: XDeadHackerX v1.1  📡                  /  |  \ " 
 	echo "          -------------------------------------------------------------------------------------------"
 	echo "               Any action and or activity related to 𝓝𝓮𝓽𝓡𝓪𝓭𝓪𝓻 is solely your responsibility"
 	echo "          -------------------------------------------------------------------------------------------"
@@ -646,6 +646,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 	echo
 	sudo apt-get install xterm -y
 	sudo apt-get install gnome-terminal -y
+	sudo apt-get install dbus-x11 -y
 	sudo apt-get install wireless-tools aircrack-ng -y
 	sudo apt install aircrack-ng -y
 	sudo apt install airgraph-ng -y
@@ -662,4 +663,8 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 	sudo apt install nbtscan -y
 	sudo apt install crackmapexec -y
 	sudo pip install speedtest-cli
+	if ! [ -d requisitos/resultados ]
+		then
+			sudo mkdir requisitos/resultados
+	fi
 fi

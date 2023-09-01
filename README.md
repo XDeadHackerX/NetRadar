@@ -4,9 +4,9 @@
 
 > Herramienta creada por XDeadHackerX
 
-<p align="center"><img width="120px" alt="Version" src="https://img.shields.io/badge/version-1.0-white.svg?style=for-the-badge"/></p>
+<p align="center"><img width="120px" alt="Version" src="https://img.shields.io/badge/version-1.1-white.svg?style=for-the-badge"/></p>
 
-[![Net-Radar-1-0-es.png](https://i.postimg.cc/FsDF5NZK/Net-Radar-1-0-es.png)](https://postimg.cc/zVHYTm4m)
+[![Net-Radar-1-1-es.png](https://i.postimg.cc/RZZR6LFR/Net-Radar-1-1-es.png)](https://postimg.cc/D8RsRs1J)
 
 ---
 
@@ -67,6 +67,10 @@
 <details>
   <summary>[ v1.0 ]</summary>
   <p align="justify">[#] Versión Original.</p>
+</details>
+<details>
+  <summary>[ v1.1 ]</summary>
+  <p align="justify">[#] Sé a Agregado una nueva funcionalidad en todos los tipos de escaneos (a excepción de los continuos), ahora guardan el escaneo en la carpeta "requisitos/resultados". También se ha optimizado los escaneos con Nmap debido a la carga que suponía en un mismo comando, se ha repartido en varios procesos para evitar eso mismo. Se han eliminado código erróneo.</p>
 </details>
 
 ## 📷 Capturas 📷
